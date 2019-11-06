@@ -25,7 +25,9 @@
     "eslint": "^6.6.0"
   },
   "eslintConfig": {
-    "env": {"browser": true},
+    "env": {
+      "browser": true
+    },
     "extends": "@jsejcksn"
   }
 }
