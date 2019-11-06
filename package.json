@@ -1,0 +1,31 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "Userscripts for increased web functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsejcksn/userscripts.git"
+  },
+  "keywords": [
+    "userscript",
+    "userscripts"
+  ],
+  "author": "Jesse Jackson <npm@jcksn.org> (https://jcksn.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsejcksn/userscripts/issues"
+  },
+  "homepage": "https://github.com/jsejcksn/userscripts#readme",
+  "devDependencies": {
+    "@jsejcksn/eslint-config": "^3.0.0-next.5",
+    "eslint": "^6.6.0"
+  },
+  "eslintConfig": {
+    "env": {"browser": true},
+    "extends": "@jsejcksn"
+  }
+}
