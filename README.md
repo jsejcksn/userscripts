@@ -1,2 +1,2 @@
 # userscripts
-Userscripts for more web functionality
+Userscripts for increased web functionality
