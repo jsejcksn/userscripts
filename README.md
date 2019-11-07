@@ -3,24 +3,24 @@ Userscripts for increased web functionality
 
 ## Letterboxd
 
- - ![Screenshot: Letterboxd release dates][letterboxd-1]
+[![Screenshot: Letterboxd release dates][letterboxd-1]][letterboxd-1a]
 
-    **Letterboxd release dates**
+**Letterboxd release dates**
 
-    Include release dates for films on Letterboxd using TMDb API data and optionally create Google Calendar events
+[View][letterboxd-1a],  [Download/Install][letterboxd-1b]
 
-    [View][letterboxd-1a],  [Download/Install][letterboxd-1b]
+Include release dates for films on Letterboxd using TMDb API data and optionally create Google Calendar events
 
 
 ## Netflix
 
- - ![Screenshot: Netflix: Download activity][netflix-1]
+[![Screenshot: Netflix: Download activity][netflix-1]][netflix-1a]
 
-    **Netflix: Download activity**
+**Netflix: Download activity**
 
-    Download your Netflix ratings or viewing activity as a JSON-formatted file
+[View][netflix-1a], [Download/Install][netflix-1b]
 
-    [View][netflix-1a], [Download/Install][netflix-1b]
+Download your Netflix ratings or viewing activity as a JSON-formatted file
 
 [letterboxd-1]: ./screenshots/letterboxd-release-dates.jpg
 [letterboxd-1a]: https://github.com/jsejcksn/userscripts/blob/master/letterboxd/letterboxd-release-dates.user.js
