@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Letterboxd release dates
-// @version     1.0.3
+// @version     1.0.5
 // @description Include release dates for films on Letterboxd using TMDb API data and optionally create Google Calendar events
 // @license     MIT
 // @author      Jesse Jackson
@@ -32,7 +32,7 @@
 
   const storageData = (() => {
     const storageKey = 'letterboxd-release-dates-userscript';
-    const storageData = {version: '1.0.3'};
+    const storageData = {version: '1.0.5'};
     storageData.get = () => {
       const item = localStorage.getItem(storageKey);
       if (item === null) return;
