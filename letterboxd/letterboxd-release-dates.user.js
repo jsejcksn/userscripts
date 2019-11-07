@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Letterboxd release dates
-// @version     1.0.4
+// @version     1.0.3
 // @description Include release dates for films on Letterboxd using TMDb API data and optionally create Google Calendar events
 // @license     MIT
 // @author      Jesse Jackson
@@ -32,7 +32,7 @@
 
   const storageData = (() => {
     const storageKey = 'letterboxd-release-dates-userscript';
-    const storageData = {version: '1.0.4'};
+    const storageData = {version: '1.0.3'};
     storageData.get = () => {
       const item = localStorage.getItem(storageKey);
       if (item === null) return;
@@ -172,13 +172,14 @@
     );
   };
 
-  const TmdbKeyDialog = () => {
+  const TmdbKeyDialog = props => {
     const [apiKey, setApiKey] = useState('');
 
     const handleClick = () => {
       if (!apiKey) return;
       storageData.tmdb_api_key = apiKey;
       storageData.set();
+      props.forceRerender();
     };
     const handleInput = ev => setApiKey(ev.target.value.trim());
 
@@ -294,7 +295,7 @@
     );
   };
 
-  const PreferencesDialog = () => {
+  const PreferencesDialog = props => {
     const [countryCode, setCountryCode] = useState('US');
     const [calendarAddress, setCalendarAddress] = useState('');
 
@@ -302,6 +303,7 @@
       storageData.country_code = countryCode;
       storageData.google_calendar = calendarAddress;
       storageData.set();
+      props.forceRerender();
     };
     const handleCountryInput = ev => setCountryCode(ev.target.value.trim());
     const handleAddressInput = ev => setCalendarAddress(ev.target.value.trim());
@@ -513,13 +515,18 @@
     );
   };
 
-  const ReleasesContent = props => h(
-    'div',
-    null,
-    (!props.tmdb_api_key && h(TmdbKeyDialog))
-    || (!props.country_code && h(PreferencesDialog))
-    || h(ReleasesData),
-  );
+  const ReleasesContent = () => {
+    const [, setRerender] = useState(false);
+    const forceRerender = () => setRerender(bool => !bool);
+
+    return h(
+      'div',
+      null,
+      (!storageData.tmdb_api_key && h(TmdbKeyDialog, {forceRerender}))
+      || (!storageData.country_code && h(PreferencesDialog, {forceRerender}))
+      || h(ReleasesData),
+    );
+  };
 
   const init = () => {
     // https://github.com/jsejcksn/js-modules/blob/master/dist/modules/html/1.0.0/html.js
@@ -545,10 +552,7 @@
         id: 'releases-link',
         onClick: ev => {
           ev.preventDefault();
-          render(h(ReleasesContent, {
-            country_code: storageData.country_code,
-            tmdb_api_key: storageData.tmdb_api_key,
-          }), releasesBlock);
+          render(h(ReleasesContent), releasesBlock);
           const contentTabs = tabbedContent.querySelectorAll('header > ul > li');
           const contentBlocks = tabbedContent.querySelectorAll('.tabbed-content-block');
           contentTabs.forEach(tab => tab.classList.remove('selected'));
