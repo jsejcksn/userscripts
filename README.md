@@ -5,7 +5,7 @@ Userscripts for increased web functionality
 
 [![Screenshot: Letterboxd release dates][letterboxd-1]][letterboxd-1a]
 
-**Letterboxd release dates**
+### Letterboxd release dates
 
 [View][letterboxd-1a],  [Download/Install][letterboxd-1b]
 
@@ -16,7 +16,7 @@ Include release dates for films on Letterboxd using TMDb API data and optionally
 
 [![Screenshot: Netflix: Download activity][netflix-1]][netflix-1a]
 
-**Netflix: Download activity**
+### Netflix: Download activity
 
 [View][netflix-1a], [Download/Install][netflix-1b]
 
