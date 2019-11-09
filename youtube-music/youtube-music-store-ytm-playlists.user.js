@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        YouTube Music: Store YTM playlists
-// @version     1.0.1
+// @version     1.0.2
 // @description Scrape and store IDs and titles for playlists created by YouTube Music
 // @license     MIT
 // @author      Jesse Jackson
@@ -25,7 +25,7 @@
 (() => {
   const config = {
     storageKey: 'playlists-ytm-store',
-    version: '1.0.1',
+    version: '1.0.2',
   };
 
   const {h, render} = window.preact;
@@ -159,8 +159,8 @@
     };
 
     const sortByTitle = ([, a], [, b]) => {
-      if (a < b) return -1;
-      if (a > b) return 1;
+      if (a.toLowerCase() < b.toLowerCase()) return -1;
+      if (a.toLowerCase() > b.toLowerCase()) return 1;
       return 0;
     };
 
