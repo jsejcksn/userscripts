@@ -12,7 +12,7 @@
   },
   "keywords": [
     "userscript",
-    "userscripts"
+    "user script"
   ],
   "author": "Jesse Jackson <npm@jcksn.org> (https://jcksn.org)",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/jsejcksn/userscripts#readme",
   "devDependencies": {
     "@jsejcksn/eslint-config": "^3.0.0",
-    "eslint": "^6.6.0"
+    "eslint": "^6.7.1"
   },
   "eslintConfig": {
     "env": {
