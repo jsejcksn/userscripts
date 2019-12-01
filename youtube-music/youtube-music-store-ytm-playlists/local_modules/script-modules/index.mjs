@@ -1,3 +1,9 @@
+const appendLightStyles = cssText => {
+  document.head
+    .appendChild(document.createElement('style'))
+    .textContent = cssText;
+};
+
 const querySelectorString = ({after = '', before = '', classes, id, type}) => {
   const combineClasses = array => ['', ...array].join('.');
   let queryString = before;
@@ -17,4 +23,4 @@ const switchcase = (value, cases, defaultCase) => {
   return typeof result === 'function' ? result() : result;
 };
 
-export {querySelectorString, switchcase};
+export {appendLightStyles, querySelectorString, switchcase};
