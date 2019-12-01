@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@jsejcksn/eslint-config": "^3.0.0",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "raw-loader": "^4.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
