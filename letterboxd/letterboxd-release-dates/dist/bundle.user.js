@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Letterboxd release dates
-// @version     1.0.6
+// @version     1.0.7
 // @description Include release dates for films on Letterboxd using TMDb API data and optionally create Google Calendar events
 // @license     MIT
 // @author      Jesse Jackson

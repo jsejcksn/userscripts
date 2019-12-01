@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Netflix: Download activity
-// @version     1.0.1
+// @version     1.0.2
 // @description Download your Netflix ratings or viewing activity as a JSON-formatted file
 // @license     MIT
 // @author      Jesse Jackson
