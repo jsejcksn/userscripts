@@ -17,7 +17,7 @@ const ExportAction = () => {
     padding: 0.5em;
 
     &:hover {
-      color: var(--color-dark);
+      background-color: var(--color-dark-grey);
     }
 
     &:active {

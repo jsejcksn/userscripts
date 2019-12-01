@@ -20,7 +20,7 @@ const VisibilityToggle = props => {
     padding-top: 2px;
 
     &:hover {
-      color: var(--color-dark);
+      background-color: var(--color-dark-grey);
     }
 
     &:active {

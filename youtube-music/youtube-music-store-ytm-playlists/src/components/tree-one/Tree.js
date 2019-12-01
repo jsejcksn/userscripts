@@ -16,6 +16,7 @@ const Tree = () => {
   const styles = {};
   styles.component = css`
     --color-dark: #282828;
+    --color-dark-grey: #404040;
     --color-grey: #606060;
     --color-light: #ffffff;
     --color-red: #ff0000;
@@ -37,15 +38,8 @@ const Tree = () => {
     `
     : `
       transition: transform var(--transition-short);
-      transform: translateY(-130px);
+      transform: translateY(-122px);
     `}
-  `;
-  styles.content = css`
-    background-color: var(--color-grey);
-
-    & > div:not(:last-child) {
-      margin-bottom: 0.25em;
-    }
   `;
 
   return h(
@@ -53,7 +47,7 @@ const Tree = () => {
     {class: styles.component},
     h(
       'div',
-      {class: styles.content},
+      null,
       h(ScrapeHomeAction),
       h(ScrapeSearchAction),
       h(ExportAction),
