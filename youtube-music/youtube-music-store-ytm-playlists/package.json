@@ -1,0 +1,27 @@
+{
+  "name": "youtube-music-store-ytm-playlists",
+  "version": "1.0.2",
+  "description": "Scrape and store IDs and titles for playlists created by YouTube Music",
+  "main": "./dist/bundle.user.js",
+  "scripts": {
+    "build": "webpack",
+    "postbuild": "tmpfile=$(mktemp /tmp/webpack-build.XXXXX) && cat ./src/meta.user.txt >> $tmpfile && echo >> $tmpfile && cat ./dist/bundle.user.js >> $tmpfile && cat $tmpfile > ./dist/bundle.user.js && rm $tmpfile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jesse Jackson <npm@jcksn.org> (https://jcksn.org)",
+  "license": "MIT",
+  "dependencies": {
+    "container-shadow": "file:local_modules/container-shadow",
+    "create-emotion": "^10.0.14",
+    "preact": "^10.0.5",
+    "script-modules": "file:local_modules/script-modules"
+  },
+  "devDependencies": {
+    "@jsejcksn/eslint-config": "^3.0.0",
+    "eslint": "^6.7.1",
+    "raw-loader": "^4.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

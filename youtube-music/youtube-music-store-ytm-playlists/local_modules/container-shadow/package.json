@@ -1,0 +1,21 @@
+{
+  "name": "container-shadow",
+  "version": "1.0.1",
+  "description": "",
+  "type": "commonjs",
+  "browser": "index.mjs",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "exports": {
+    "./commonjs": "./index.cjs",
+    "./cjs": "./index.cjs",
+    "./esm": "./index.mjs",
+    "./module": "./index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jesse Jackson <npm@jcksn.org> (https://jcksn.org)",
+  "license": "MIT"
+}
