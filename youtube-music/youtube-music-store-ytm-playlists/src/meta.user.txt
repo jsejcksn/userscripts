@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        YouTube Music: Store YTM playlists
-// @version     1.1.0
+// @version     1.1.1
 // @description Scrape and store IDs and titles for playlists created by YouTube Music
 // @license     MIT
 // @author      Jesse Jackson
