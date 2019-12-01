@@ -22,7 +22,7 @@
   "homepage": "https://github.com/jsejcksn/userscripts#readme",
   "devDependencies": {
     "@jsejcksn/eslint-config": "^3.0.0",
-    "eslint": "^6.7.1"
+    "eslint": "^6.7.2"
   },
   "eslintConfig": {
     "env": {
