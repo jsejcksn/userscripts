@@ -37,12 +37,13 @@ const createContainerShadow = ({
       .appendChild(document.createElement('style'))
       .textContent = cssText;
   }
+  const componentRoot = shadowRoot.appendChild(document.createElement('div'));
 
   target.insertAdjacentElement(
     insertionPosition,
     containerElement,
   );
-  return shadowRoot;
+  return {componentRoot, shadowRoot};
 };
 
 createContainerShadow.createContainerShadow = createContainerShadow;

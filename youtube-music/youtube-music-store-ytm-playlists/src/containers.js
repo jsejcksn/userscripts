@@ -14,8 +14,9 @@ const targets = [
 
 const {containers, emotions} = targets.reduce(
   (acc, {key, position, style, target}) => {
-    const container = createContainerShadow({cssText, position, style, target});
-    const emotion = createEmotion({container, key});
+    const {componentRoot: container, shadowRoot} =
+      createContainerShadow({cssText, position, style, target});
+    const emotion = createEmotion({container: shadowRoot, key});
     acc.containers[key] = container;
     acc.emotions[key] = emotion;
     return acc;

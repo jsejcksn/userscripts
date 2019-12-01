@@ -10,27 +10,31 @@ const VisibilityToggle = props => {
   styles.component = css`
     display: flex;
   `;
-  styles.button = css`
+  styles.toggle = css`
     background-color: var(--color-grey);
     border-bottom-left-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
     color: var(--color-light);
     cursor: pointer;
     margin-left: auto;
-  `;
-  styles.svg = css`
-    --size: 0.25em;
-    height: var(--size);
-    width: var(--size);
+    padding-top: 2px;
+
+    &:hover {
+      color: var(--color-dark);
+    }
+
+    &:active {
+      color: var(--color-red);
+    }
   `;
 
   return h(
     'div',
     {class: styles.component},
     h(
-      'button',
+      'div',
       {
-        class: styles.component,
+        class: styles.toggle,
         onClick: props.toggleVisibility,
       },
       props.visible

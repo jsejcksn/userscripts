@@ -1,6 +1,7 @@
 import {emotions} from '../../containers';
 import {h} from 'preact';
 import keys from '../../keys';
+import MaterialIcon from './MaterialIcon';
 import {storageData} from '../../storage-data';
 
 const {css} = emotions[keys.one];
@@ -11,9 +12,20 @@ const ExportAction = () => {
     background-color: var(--color-grey);
     color: var(--color-light);
     cursor: pointer;
-    display: block;
-    margin-bottom: 0.25em;
+    display: flex;
+    align-items: center;
     padding: 0.5em;
+
+    &:hover {
+      color: var(--color-dark);
+    }
+
+    &:active {
+      color: var(--color-red);
+    }
+  `;
+  styles.span = css`
+    margin-left: 0.5em;
   `;
 
   const exportData = () => {
@@ -58,7 +70,8 @@ const ExportAction = () => {
       class: styles.component,
       onClick: exportData,
     },
-    'Export data',
+    h(MaterialIcon, {name: 'save_alt'}),
+    h('span', {class: styles.span}, 'Export data'),
   );
 };
 

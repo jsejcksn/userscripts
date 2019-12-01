@@ -1,6 +1,7 @@
 import {emotions} from '../../containers';
 import {h} from 'preact';
 import keys from '../../keys';
+import MaterialIcon from './MaterialIcon';
 import {storageData} from '../../storage-data';
 
 const {css} = emotions[keys.one];
@@ -11,9 +12,20 @@ const ScrapeHomeAction = () => {
     background-color: var(--color-grey);
     color: var(--color-light);
     cursor: pointer;
-    display: block;
-    margin-bottom: 0.25em;
+    display: flex;
+    align-items: center;
     padding: 0.5em;
+
+    &:hover {
+      color: var(--color-dark);
+    }
+
+    &:active {
+      color: var(--color-red);
+    }
+  `;
+  styles.span = css`
+    margin-left: 0.5em;
   `;
 
   const handleClick = () => {
@@ -27,7 +39,8 @@ const ScrapeHomeAction = () => {
       class: styles.component,
       onClick: handleClick,
     },
-    'Scrape home',
+    h(MaterialIcon, {name: 'archive'}),
+    h('span', {class: styles.span}, 'Scrape home'),
   );
 };
 

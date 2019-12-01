@@ -22,16 +22,30 @@ const Tree = () => {
     --font-mono: 'Roboto Mono', monospace;
     --font-sans: 'Roboto', sans-serif;
     --font-size: 16px;
-    --transition-long: 800ms;
-    --transition-short: 200ms;
+    --transition-long: 500ms;
+    --transition-medium: 200ms;
+    --transition-short: 100ms;
     
     color: var(--color-light);
     font-family: var(--font-sans);
     font-size: var(--font-size);
+
+    ${visible
+    ? `
+      transition: transform var(--transition-medium);
+      transform: translateY(0px);
+    `
+    : `
+      transition: transform var(--transition-short);
+      transform: translateY(-130px);
+    `}
   `;
   styles.content = css`
     background-color: var(--color-grey);
-    display: ${visible ? 'block' : 'none'};
+
+    & > div:not(:last-child) {
+      margin-bottom: 0.25em;
+    }
   `;
 
   return h(
