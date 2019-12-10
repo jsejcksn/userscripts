@@ -14,7 +14,7 @@
   "dependencies": {
     "container-shadow": "file:local_modules/container-shadow",
     "create-emotion": "^10.0.14",
-    "preact": "^10.0.5",
+    "preact": "^10.1.0",
     "script-modules": "file:local_modules/script-modules"
   },
   "devDependencies": {
