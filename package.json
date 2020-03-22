@@ -2,7 +2,7 @@
   "name": "userscripts",
   "version": "1.1.0",
   "description": "Userscripts for increased web functionality",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/jsejcksn/userscripts#readme",
   "devDependencies": {
-    "@jsejcksn/eslint-config": "^3.0.0",
-    "eslint": "^6.7.2"
+    "@jsejcksn/eslint-config": "^3.1.0",
+    "eslint": "^6.8.0"
   },
   "eslintConfig": {
     "env": {
