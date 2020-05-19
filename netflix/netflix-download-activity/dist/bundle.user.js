@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name        Netflix: Download activity
-// @version     1.0.2
+// @version     1.0.3
 // @description Download your Netflix ratings or viewing activity as a JSON-formatted file
 // @license     MIT
 // @author      Jesse Jackson
 // @match       https://www.netflix.com/moviesyouveseen
 // @match       https://www.netflix.com/MoviesYouveSeen
+// @match       https://www.netflix.com/settings/rated/*
+// @match       https://www.netflix.com/settings/viewed/*
 // @match       https://www.netflix.com/viewingactivity
 // @namespace   https://github.com/jsejcksn
 // @noframes
@@ -113,12 +115,17 @@
       VIEWS: 'views',
     },
   };
-  activity.urls = {
-    'https://www.netflix.com/moviesyouveseen': activity.types.RATINGS,
-    'https://www.netflix.com/MoviesYouveSeen': activity.types.RATINGS,
-    'https://www.netflix.com/viewingactivity': activity.types.VIEWS,
-  };
-  activity.type = activity.urls[location.href];
+
+  const reRatings = /^\/(?:settings\/rated|moviesyouveseen).*/u;
+  const reViews = /^\/(?:settings\/viewed|viewingactivity).*/u;
+
+  if (reRatings.test(location.pathname.toLowerCase())) {
+    activity.type = activity.types.RATINGS;
+  }
+  else if (reViews.test(location.pathname.toLowerCase())) {
+    activity.type = activity.types.VIEWS;
+  }
+  else throw new Error(`Activity type couldn't be determined by URL`);
 
   init();
 
@@ -126,11 +133,11 @@
   selector.addEventListener('click', async () => {
     const halfSecond = 500;
     await wait(halfSecond);
-    if (selector.querySelector('a.choice.icon.rating').classList.contains('selected')) {
+    if (selector.querySelector('.choice.icon.rating').nodeName === 'SPAN') {
       activity.type = activity.types.RATINGS;
       init();
     }
-    else if (selector.querySelector('a.choice.icon.viewing').classList.contains('selected')) {
+    else if (selector.querySelector('.choice.icon').nodeName === 'SPAN') {
       activity.type = activity.types.VIEWS;
       init();
     }
