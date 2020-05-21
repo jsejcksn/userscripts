@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Netflix: Download activity
-// @version     1.0.3
+// @version     1.0.4
 // @description Download your Netflix ratings or viewing activity as a JSON-formatted file
 // @license     MIT
 // @author      Jesse Jackson
@@ -96,7 +96,11 @@
 
       const date = new Date();
       const dateFormatted = `${date.toISOString().split('.')[0].split('-').join('').split(':').join('')}Z`;
-      const profileName = document.querySelector('#profileSelector .avatar').getAttribute('alt');
+      let profileName = 'Unknown';
+      try {
+        profileName = document.querySelector('img.activeProfile').getAttribute('alt');
+      }
+      catch {}
 
       const data = {
         profile: profileName,
