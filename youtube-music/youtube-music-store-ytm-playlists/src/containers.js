@@ -1,5 +1,5 @@
 import {createContainerShadow} from 'container-shadow';
-import createEmotion from 'create-emotion';
+import createEmotion from '@emotion/css/create-instance';
 import cssText from '!!raw-loader!./base.css';
 import keys from './keys';
 
