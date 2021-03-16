@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/jsejcksn/userscripts#readme",
   "devDependencies": {
-    "@jsejcksn/eslint-config": "^3.1.0",
-    "eslint": "^7.0.0"
+    "@jsejcksn/eslint-config": "^3.1.1",
+    "eslint": "^7.22.0"
   },
   "eslintConfig": {
     "env": {
